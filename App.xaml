@@ -12,3 +12,28 @@
         </ResourceDictionary>
     </Application.Resources>
 </Application>
+using System;
+using Torok_Erika_Lab7.Data;
+using System.IO;
+namespace Torok_Erika_Lab7
+ public partial class App : Application
+ {
+ static ShoppingListDatabase database;
+ public static ShoppinglistDatabase Database
+ {
+ get
+ {
+ if (database == null)
+ {
+ database = new
+ShoppinglistDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.
+LocalApplicationData), "Shoppinglist.db3"));
+ }
+ return database;
+ }
+ }
+ public App()
+ {
+ InitializeComponent();
+ MainPage = new AppShell();
+ }
