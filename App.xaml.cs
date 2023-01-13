@@ -26,4 +26,9 @@ public partial class App : Application
 
 		MainPage = new AppShell();
 	}
+
+    private void InitializeComponent()
+    {
+        throw new NotImplementedException();
+    }
 }
